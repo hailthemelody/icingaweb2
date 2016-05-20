@@ -118,8 +118,8 @@ class ServicestatusQuery extends IdoQuery
                 END
             ELSE
                 CASE WHEN hs.has_been_checked = 0 OR hs.has_been_checked IS NULL THEN 16
-                     WHEN hs.current_state = 1 THEN 32
-                     WHEN hs.current_state = 2 THEN 64
+                     WHEN hs.current_state = 1 THEN 64
+                     WHEN hs.current_state = 2 THEN 32
                      ELSE 256
                 END
                 +
@@ -248,9 +248,9 @@ class ServicestatusQuery extends IdoQuery
                 END
             ELSE
                 CASE WHEN ss.has_been_checked = 0 OR ss.has_been_checked IS NULL THEN 16
-                     WHEN ss.current_state = 1 THEN 32
+                     WHEN ss.current_state = 1 THEN 64
                      WHEN ss.current_state = 2 THEN 128
-                     WHEN ss.current_state = 3 THEN 64
+                     WHEN ss.current_state = 3 THEN 32
                      ELSE 256
                 END
                 +
