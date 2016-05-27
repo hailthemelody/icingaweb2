@@ -322,8 +322,6 @@ class RemoteCommandFile implements CommandTransportInterface
     {
         if ($this->sshIsAlive()) {
             $ret = fwrite($this->pipes[0], $commandString . "\n");
-            $ret = fwrite($this->pipes[0], $commandString . "\n");
-            $ret = fwrite($this->pipes[0], $commandString . "\n");
             if ($ret === false) {
                 $this->throwSshFailure('Cannot write to remote command pipe');
             } elseif ($ret !== strlen($commandString) + 1) {
